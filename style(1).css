@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    place-items: center;
+    background: lightpink;
+    
+}
+.main{
+    display: inline-flex;
+}
+.icon{
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+}
+.icon span{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: block;
+    background: #b19090;
+    border-radius: 50%;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 1);
+}
+.icon span i{
+    font-size: 30px;
+    line-height: 60px;
+}
+.link{
+    background: #ffff;
+    font-size: 20px;
+    padding: 8px 18px;
+    border-radius: 15px;
+    position: absolute;
+    top: -50px;
+    opacity: 0;
+    transition: all 0.3s ease-out ;
+    pointer-events: none;
+}
+
+.icon:hover .link{
+    opacity: 1;
+    pointer-events: auto;
+}
+.link::before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #000;
+    bottom: -5px;
+    left: 50%;
+    background: #fff;
+    transform: translateX(-50%) rotate(45deg);
+}
+.facebook:hover span,
+.facebook:hover .link::before,
+.facebook:hover .link{
+    background: #3b5999;
+}
+
+.instagram:hover .link::before,
+.instagram:hover span,
+.instagram:hover .link{
+    background: #e1306c;
+}
+.github:hover span,
+.github:hover .link::before,
+.github:hover .link{
+    background: #333;
+}
+.youtube:hover span,
+.youtube:hover .link::before,
+.youtube:hover .link{
+    background: #ff0000;
+}
+.twitter:hover span,
+.twitter:hover .link::before,
+.twitter:hover .link{
+    background: #0051ff;
+}
